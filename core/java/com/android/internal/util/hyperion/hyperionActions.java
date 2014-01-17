@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.android.internal.util.slim;
+package com.android.internal.util.hyperion;
 
 import android.app.Activity;
 import android.app.ActivityManagerNative;
@@ -49,7 +49,7 @@ import com.android.internal.statusbar.IStatusBarService;
 
 import java.net.URISyntaxException;
 
-public class SlimActions {
+public class HyperionActions {
 
     private static final int MSG_INJECT_KEY_DOWN = 1066;
     private static final int MSG_INJECT_KEY_UP = 1067;
@@ -284,7 +284,7 @@ public class SlimActions {
                 try {
                     intent = Intent.parseUri(action, 0);
                 } catch (URISyntaxException e) {
-                    Log.e("SlimActions:", "URISyntaxException: [" + action + "]");
+                    Log.e("HyperionActions:", "URISyntaxException: [" + action + "]");
                     return;
                 }
                 startActivity(context, windowManagerService, isKeyguardShowing, intent);

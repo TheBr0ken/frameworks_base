@@ -27,8 +27,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 
-import com.android.internal.util.slim.ButtonsConstants;
-import com.android.internal.util.slim.SlimActions;
+import com.android.internal.util.hyperion.ButtonsConstants;
+import com.android.internal.util.hyperion.HyperionActions;
 
 import com.android.systemui.R;
 import com.android.systemui.statusbar.phone.QuickSettingsContainerView;
@@ -48,11 +48,11 @@ public class ThemeTile extends QuickSettingsTile {
         mOnClick = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // SlimAction can take care of it
+                // HyperionAction can take care of it
                 // will collapse as well automatically
                 // the drawer to reconstruct it or show
                 // the toast message if not possible
-                SlimActions.processAction(mContext, ButtonsConstants.ACTION_THEME_SWITCH, false);
+                HyperionActions.processAction(mContext, ButtonsConstants.ACTION_THEME_SWITCH, false);
             }
         };
 

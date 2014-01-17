@@ -20,8 +20,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.android.internal.util.slim.ButtonsConstants;
-import com.android.internal.util.slim.SlimActions;
+import com.android.internal.util.hyperion.ButtonsConstants;
+import com.android.internal.util.hyperion.HyperionActions;
 
 public class Screenshot extends Activity  {
 
@@ -37,7 +37,7 @@ public class Screenshot extends Activity  {
         // Allow statusbar to collapse if desired
         handle.postDelayed(new Runnable() {
             public void run() {
-                SlimActions.processActionWithOptions(Screenshot.this,
+                HyperionActions.processActionWithOptions(Screenshot.this,
                         ButtonsConstants.ACTION_SCREENSHOT, false, false);
                 Screenshot.this.finish();
             }

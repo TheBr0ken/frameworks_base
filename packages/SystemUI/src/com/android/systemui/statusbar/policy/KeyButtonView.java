@@ -39,8 +39,8 @@ import android.view.ViewDebug;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.ImageView;
 
-import com.android.internal.util.slim.ButtonsConstants;
-import com.android.internal.util.slim.SlimActions;
+import com.android.internal.util.hyperion.ButtonsConstants;
+import com.android.internal.util.hyperion.HyperionActions;
 
 import com.android.systemui.R;
 
@@ -74,7 +74,7 @@ public class KeyButtonView extends ImageView {
             if (isPressed()) {
                 sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_LONG_CLICKED);
                 if (mLongpressAction != null
-                    && SlimActions.isActionKeyEvent(mLongpressAction)) {
+                    && HyperionActions.isActionKeyEvent(mLongpressAction)) {
                     setHapticFeedbackEnabled(false);
                 }
                 performLongClick();
@@ -302,7 +302,7 @@ public class KeyButtonView extends ImageView {
                 if (!mIsLongpressed) {
                     if (isPressed()) {
                         if (mClickAction != null
-                            && !SlimActions.isActionKeyEvent(mClickAction)) {
+                            && !HyperionActions.isActionKeyEvent(mClickAction)) {
                             performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
                         }
                         performClick();
@@ -322,7 +322,7 @@ public class KeyButtonView extends ImageView {
     private OnClickListener mClickListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
-            SlimActions.processAction(mContext, mClickAction, false);
+            HyperionActions.processAction(mContext, mClickAction, false);
             return;
         }
     };
@@ -330,7 +330,7 @@ public class KeyButtonView extends ImageView {
     private OnLongClickListener mLongPressListener = new OnLongClickListener() {
         @Override
         public boolean onLongClick(View v) {
-            SlimActions.processAction(mContext, mLongpressAction, true);
+            HyperionActions.processAction(mContext, mLongpressAction, true);
             return true;
         }
     };

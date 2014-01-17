@@ -99,10 +99,10 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.android.internal.statusbar.StatusBarIcon;
-import com.android.internal.util.slim.ButtonConfig;
-import com.android.internal.util.slim.ButtonsConstants;
-import com.android.internal.util.slim.ButtonsHelper;
-import com.android.internal.util.slim.DeviceUtils;
+import com.android.internal.util.hyperion.ButtonConfig;
+import com.android.internal.util.hyperion.ButtonsConstants;
+import com.android.internal.util.hyperion.ButtonsHelper;
+import com.android.internal.util.hyperion.DeviceUtils;
 
 import com.android.systemui.BatteryMeterView;
 import com.android.systemui.BatteryCircleMeterView;

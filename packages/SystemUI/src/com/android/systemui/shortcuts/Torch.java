@@ -20,8 +20,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.android.internal.util.slim.ButtonsConstants;
-import com.android.internal.util.slim.SlimActions;
+import com.android.internal.util.hyperion.ButtonsConstants;
+import com.android.internal.util.hyperion.HyperionActions;
 
 public class Torch extends Activity  {
 
@@ -33,7 +33,7 @@ public class Torch extends Activity  {
     @Override
     public void onResume() {
         super.onResume();
-        SlimActions.processAction(
+        HyperionActions.processAction(
                 this, ButtonsConstants.ACTION_TORCH, false);
         this.finish();
     }

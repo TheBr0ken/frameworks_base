@@ -19,8 +19,8 @@ package com.android.systemui.shortcuts;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.android.internal.util.slim.ButtonsConstants;
-import com.android.internal.util.slim.SlimActions;
+import com.android.internal.util.hyperion.ButtonsConstants;
+import com.android.internal.util.hyperion.HyperionActions;
 
 public class PowerMenu extends Activity  {
 
@@ -32,7 +32,7 @@ public class PowerMenu extends Activity  {
     @Override
     public void onResume() {
         super.onResume();
-        SlimActions.processAction(this, ButtonsConstants.ACTION_POWER_MENU, false);
+        HyperionActions.processAction(this, ButtonsConstants.ACTION_POWER_MENU, false);
         this.finish();
     }
 }

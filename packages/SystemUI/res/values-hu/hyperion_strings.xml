@@ -31,8 +31,8 @@
     <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
     <string name="accessibility_data_connection_HP">HSPA+</string>
 
-    <!-- Slim Shortcut Actions -->
-    <string name="shortcut_picker">Slim Parancsikonok</string>
+    <!-- Hyperion Shortcut Actions -->
+    <string name="shortcut_picker">Hyperion Parancsikonok</string>
     <string name="shortcut_immersive">Immersive mód kapcsoló</string>
     <string name="shortcut_quiethours">Csendes órák kapcsoló</string>
     <string name="shortcut_rotation">Forgatás zároló kapcsoló</string>

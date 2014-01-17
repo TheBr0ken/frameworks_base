@@ -37,12 +37,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.internal.R;
-import com.android.internal.util.slim.AppHelper;
-import com.android.internal.util.slim.ButtonsHelper;
-import com.android.internal.util.slim.ButtonConfig;
-import com.android.internal.util.slim.DeviceUtils;
-import com.android.internal.util.slim.LockscreenTargetUtils;
-import com.android.internal.util.slim.SlimActions;
+import com.android.internal.util.hyperion.AppHelper;
+import com.android.internal.util.hyperion.ButtonsHelper;
+import com.android.internal.util.hyperion.ButtonConfig;
+import com.android.internal.util.hyperion.DeviceUtils;
+import com.android.internal.util.hyperion.LockscreenTargetUtils;
+import com.android.internal.util.hyperion.HyperionActions;
 import com.android.internal.widget.LockPatternUtils;
 
 import java.net.URISyntaxException;
@@ -117,7 +117,7 @@ public class KeyguardShortcuts extends LinearLayout {
                     @Override
                     public boolean onLongClick(View v) {
                         doHapticKeyClick(HapticFeedbackConstants.LONG_PRESS);
-                        SlimActions.processAction(mContext, action, true);
+                        HyperionActions.processAction(mContext, action, true);
                         return true;
                     }
                 });
@@ -126,7 +126,7 @@ public class KeyguardShortcuts extends LinearLayout {
                     @Override
                     public void onClick(View v) {
                         doHapticKeyClick(HapticFeedbackConstants.VIRTUAL_KEY);
-                        SlimActions.processAction(mContext, action, false);
+                        HyperionActions.processAction(mContext, action, false);
                     }
                 });
             }

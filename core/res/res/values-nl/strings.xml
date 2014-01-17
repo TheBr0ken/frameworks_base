@@ -1389,7 +1389,7 @@
     <string name="gpsNotifMessage" msgid="1374718023224000702">"Aangevraagd door <xliff:g id="NAME">%1$s</xliff:g> (<xliff:g id="SERVICE">%2$s</xliff:g>)"</string>
     <string name="gpsVerifYes" msgid="2346566072867213563">"Ja"</string>
     <string name="gpsVerifNo" msgid="1146564937346454865">"Nee"</string>
-    <string name="sync_too_many_deletes" msgid="5296321850662746890">"Verwijderingslimiet overschreden"</string>
+    <string name="sync_too_many_deletes" msgid="5296321850662746890">"Verwijderingsliniet overschreden"</string>
     <string name="sync_too_many_deletes_desc" msgid="496551671008694245">"Er zijn <xliff:g id="NUMBER_OF_DELETED_ITEMS">%1$d</xliff:g> verwijderde items voor <xliff:g id="TYPE_OF_SYNC">%2$s</xliff:g> , account <xliff:g id="ACCOUNT_NAME">%3$s</xliff:g> . Wat wilt u doen?"</string>
     <string name="sync_really_delete" msgid="2572600103122596243">"De items verwijderen."</string>
     <string name="sync_undo_deletes" msgid="2941317360600338602">"Verwijderingen ongedaan maken"</string>

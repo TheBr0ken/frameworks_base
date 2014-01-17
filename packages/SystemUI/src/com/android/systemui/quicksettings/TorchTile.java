@@ -28,9 +28,9 @@ import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.android.internal.util.slim.ButtonsConstants;
-import com.android.internal.util.slim.SlimActions;
-import com.android.internal.util.slim.TorchConstants;
+import com.android.internal.util.hyperion.ButtonsConstants;
+import com.android.internal.util.hyperion.HyperionActions;
+import com.android.internal.util.hyperion.TorchConstants;
 
 import com.android.systemui.R;
 import com.android.systemui.statusbar.phone.QuickSettingsContainerView;
@@ -46,7 +46,7 @@ public class TorchTile extends QuickSettingsTile {
         mOnClick = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SlimActions.processAction(mContext, ButtonsConstants.ACTION_TORCH, false);
+                HyperionActions.processAction(mContext, ButtonsConstants.ACTION_TORCH, false);
             }
         };
 

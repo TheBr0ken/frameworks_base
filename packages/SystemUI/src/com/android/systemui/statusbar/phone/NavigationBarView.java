@@ -57,11 +57,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.android.internal.util.slim.ButtonConfig;
-import com.android.internal.util.slim.ButtonsConstants;
-import com.android.internal.util.slim.ButtonsHelper;
-import com.android.internal.util.slim.ImageHelper;
-import com.android.internal.util.slim.DeviceUtils;
+import com.android.internal.util.hyperion.ButtonConfig;
+import com.android.internal.util.hyperion.ButtonsConstants;
+import com.android.internal.util.hyperion.ButtonsHelper;
+import com.android.internal.util.hyperion.ImageHelper;
+import com.android.internal.util.hyperion.DeviceUtils;
 import com.android.systemui.R;
 import com.android.systemui.statusbar.BaseStatusBar;
 import com.android.systemui.statusbar.DelegateViewHelper;
