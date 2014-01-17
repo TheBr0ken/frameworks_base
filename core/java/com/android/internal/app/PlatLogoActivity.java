@@ -46,7 +46,7 @@ public class PlatLogoActivity extends Activity {
     int mCount;
     private boolean mIsSlim;
     final Handler mHandler = new Handler();
-    static final int BGCOLOR = 0xffed1d24;
+    static final int BGCOLOR = 0x000000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +87,7 @@ public class PlatLogoActivity extends Activity {
 
         final TextView tv = new TextView(this);
 
-        mIsSlim = SystemProperties.get("ro.slim.version") != null;
+        mIsSlim = SystemProperties.get("ro.hyperion.version") != null;
 
         if (light != null) tv.setTypeface(light);
         tv.setTextSize(30);
@@ -95,7 +95,7 @@ public class PlatLogoActivity extends Activity {
         tv.setTextColor(0xFFFFFFFF);
         tv.setGravity(Gravity.CENTER);
         tv.setTransformationMethod(new AllCapsTransformationMethod(this));
-        tv.setText((mIsSlim ? "SlimKAT " : "Android ") + Build.VERSION.RELEASE);
+        tv.setText((mIsSlim ? "Hyperion " : "Android ") + Build.VERSION.RELEASE);
         tv.setVisibility(View.INVISIBLE);
 
         mContent.addView(bg);
