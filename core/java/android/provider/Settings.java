@@ -2870,6 +2870,18 @@ public final class Settings {
         public static final String EXPANDED_DESKTOP_STATE = "expanded_desktop_state";
 
         /**
+         * Enable blocking wakelock
+         * @hide
+         */
+        public static final String WAKELOCK_BLOCKING_ENABLED = "wakelock_blocking_enabled";
+
+        /**
+         * List of wakelock blocks selected
+         * @hide
+         */
+        public static final String WAKELOCK_BLOCKING_LIST = "wakelock_blocking_list";
+
+        /**
          *
          * SMOOTH PROGRESS BAR Mirror
          * @hide
@@ -2940,7 +2952,7 @@ public final class Settings {
         public static final String PROGRESSBAR_COLOR_4 = "progressbar_color_4";
 
         /**
-		 * Whether national data roaming should be used.
+         * Whether national data roaming should be used.
          * @hide
          */
         public static final String MVNO_ROAMING = "mvno_roaming";
