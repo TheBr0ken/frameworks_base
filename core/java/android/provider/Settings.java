@@ -3184,15 +3184,11 @@ public final class Settings {
 
         /**
          * Custom navring intent and action configuration
-         *
          * @hide
          */
         public static final String NAVRING_CONFIG = "navring_config";
 
         /**
-<<<<<<< HEAD
-         * Wether the navbar menu button is on the left/right/both
-=======
          * show clear all recents button
          *  @hide
          */
@@ -3205,14 +3201,7 @@ public final class Settings {
         public static final String CLEAR_RECENTS_BUTTON_LOCATION = "clear_recents_button_location";
 
         /**
-         * Sets the lockscreen background style
-         * @hide
-         */
-        public static final String LOCKSCREEN_BACKGROUND = "lockscreen_background";
-
-         /**
-         * Action for long-pressing back button on lock screen
->>>>>>> e9a3a60... Custom clear recents button (1/2)
+         * Wether the navbar menu button is on the left/right/both
          * @hide
          */
         public static final String MENU_LOCATION = "menu_location";
