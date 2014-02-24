@@ -2870,6 +2870,88 @@ public final class Settings {
         public static final String EXPANDED_DESKTOP_STATE = "expanded_desktop_state";
 
         /**
+         * Enable blocking wakelock
+         * @hide
+         */
+        public static final String WAKELOCK_BLOCKING_ENABLED = "wakelock_blocking_enabled";
+
+        /**
+         * List of wakelock blocks selected
+         * @hide
+         */
+        public static final String WAKELOCK_BLOCKING_LIST = "wakelock_blocking_list";
+
+        /**
+         *
+         * SMOOTH PROGRESS BAR Mirror
+         * @hide
+         */
+        public static final String PROGRESSBAR_MIRROR = "progressbar_mirror";
+
+        /**
+         *
+         * SMOOTH PROGRESS BAR Reverse
+         * @hide
+         */
+        public static final String PROGRESSBAR_REVERSE = "progressbar_reverse";
+
+        /**
+         *
+         * SMOOTH PROGRESS BAR Speed
+         * @hide
+         */
+        public static final String PROGRESSBAR_SPEED = "progressbar_speed";
+
+        /**
+         *
+         * SMOOTH PROGRESS BAR Width
+         * @hide
+         */
+        public static final String PROGRESSBAR_WIDTH = "progressbar_width";
+
+        /**
+         *
+         * SMOOTH PROGRESS BAR Length
+         * @hide
+         */
+        public static final String PROGRESSBAR_LENGTH = "progressbar_length";
+
+        /**
+         *
+         * SMOOTH PROGRESS BAR Count
+         * @hide
+         */
+        public static final String PROGRESSBAR_COUNT = "progressbar_count";
+
+        /**
+         *
+         * SMOOTH PROGRESS BAR Color_1
+         * @hide
+         */
+        public static final String PROGRESSBAR_COLOR_1 = "progressbar_color_1";
+
+        /**
+         *
+         * SMOOTH PROGRESS BAR Color_2
+         * @hide
+         */
+        public static final String PROGRESSBAR_COLOR_2 = "progressbar_color_2";
+
+        /**
+         *
+         * SMOOTH PROGRESS BAR Color_3
+         * @hide
+         */
+        public static final String PROGRESSBAR_COLOR_3 = "progressbar_color_3";
+
+        /**
+         *
+         * SMOOTH PROGRESS BAR Color_4
+         * @hide
+         */
+        public static final String PROGRESSBAR_COLOR_4 = "progressbar_color_4";
+
+        /**
          * Whether national data roaming should be used.
          * @hide
          */
@@ -3337,7 +3419,20 @@ public final class Settings {
         public static final String QUIET_HOURS_MUTE = "quiet_hours_mute";
 
         /**
-         * Whether to disable haptic feedback during quiet hours.
+         * Sets the lockscreen background style
+         * @hide
+         */
+        public static final String LOCKSCREEN_BACKGROUND_STYLE = "lockscreen_background_style";
+
+        /**
+         * Color for lockscreen background when set to color fill
+         * @hide
+         */
+        public static final String LOCKSCREEN_BACKGROUND_COLOR = "lockscreen_background_color";
+
+        /**
+		 * Whether to disable haptic feedback during quiet hours.
+         *
          * @hide
          */
         public static final String QUIET_HOURS_HAPTIC = "quiet_hours_haptic";
