@@ -303,8 +303,6 @@ public class KeyguardViewManager {
             }
             computeCustomBackgroundBounds(mCustomBackground);
             invalidate();
-            }
-            invalidate();
         }
 
         private void computeCustomBackgroundBounds(Drawable background) {
