@@ -307,7 +307,7 @@ public class ProgressBar extends View {
          int Length = Settings.System.getInt(mContext.getContentResolver(),
                  Settings.System.PROGRESSBAR_LENGTH, 10);
          int Count = Settings.System.getInt(mContext.getContentResolver(),
-                 Settings.System.PROGRESSBAR_COUNT, 6);
+                 Settings.System.PROGRESSBAR_COUNT, 3);
          int Color1 = Settings.System.getInt(mContext.getContentResolver(),
                  Settings.System.PROGRESSBAR_COLOR_1, -1);
          int Color2 = Settings.System.getInt(mContext.getContentResolver(),
