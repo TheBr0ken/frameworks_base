@@ -491,6 +491,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private boolean mVolumeUpKeyTriggered;
     private boolean mPowerKeyTriggered;
     private long mPowerKeyTime;
+    private boolean mHomeWakeScreen;
     private boolean mVolumeWakeScreen;
     private boolean mVolumeMusicControls;
     private boolean mIsLongPress;
@@ -586,6 +587,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.Secure.getUriFor(
                     Settings.Secure.IMMERSIVE_MODE_CONFIRMATIONS), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HOME_WAKE_SCREEN), false, this,
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.VOLUME_WAKE_SCREEN), false, this,
@@ -1383,6 +1387,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 updateRotation = true;
                 updateOrientationListenerLp();
             }
+
+            mHomeWakeScreen = Settings.System.getIntForUser(resolver,
+                    Settings.System.HOME_WAKE_SCREEN, 0, UserHandle.USER_CURRENT) != 0;
 
             mVolumeWakeScreen = Settings.System.getIntForUser(resolver,
                     Settings.System.VOLUME_WAKE_SCREEN, 0, UserHandle.USER_CURRENT) != 0;
@@ -4453,9 +4460,14 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             policyFlags |= WindowManagerPolicy.FLAG_WAKE;
         }
 
-        // no volume wake handling if screen off because of proxy sensor
+        // no volume or home wake handling if screen off because of proxy sensor
         final boolean isOffByProx =
             (mScreenOffReason == WindowManagerPolicy.OFF_BECAUSE_OF_PROX_SENSOR);
+
+        final boolean isHomeWakeKey = !isScreenOn
+            && mHomeWakeScreen
+            && !isOffByProx
+            && (keyCode == KeyEvent.KEYCODE_HOME);
 
         final boolean isVolumeWakeKey = !isScreenOn
             && mVolumeWakeScreen
@@ -4465,7 +4477,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
         final boolean isWakeKey = (policyFlags
             & (WindowManagerPolicy.FLAG_WAKE | WindowManagerPolicy.FLAG_WAKE_DROPPED)) != 0
-            || isVolumeWakeKey;
+            || isHomeWakeKey || isVolumeWakeKey;
 
         if (DEBUG_INPUT) {
             Log.d(TAG, "interceptKeyTq keycode=" + keyCode
@@ -4496,7 +4508,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             // to wake the device but don't pass the key to the application.
             result = 0;
             if (down && isWakeKey && isWakeKeyWhenScreenOff(keyCode)) {
-                if ((keyCode != KeyEvent.KEYCODE_VOLUME_UP) && (keyCode != KeyEvent.KEYCODE_VOLUME_DOWN)) {
+                if ((keyCode != KeyEvent.KEYCODE_HOME) && (keyCode != KeyEvent.KEYCODE_VOLUME_UP) && (keyCode != KeyEvent.KEYCODE_VOLUME_DOWN)) {
                     // Wake the device.
                     result |= ACTION_WAKE_UP;
                 }
@@ -4628,7 +4640,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         }
                     }
                 }
-                if (isScreenOn || !mVolumeWakeScreen) {
+                if (isScreenOn || !mVolumeWakeScreen || !mHomeWakeScreen) {
                     break;
                 } else if (keyguardActive) {
                     keyCode = KeyEvent.KEYCODE_POWER;
@@ -4785,6 +4797,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             case KeyEvent.KEYCODE_MEDIA_FAST_FORWARD:
             case KeyEvent.KEYCODE_MEDIA_AUDIO_TRACK:
             case KeyEvent.KEYCODE_CAMERA:
+                return false;
+
+            // home wake is now configurable so lets default to no here
+            case KeyEvent.KEYCODE_HOME:
                 return false;
         }
         return true;
